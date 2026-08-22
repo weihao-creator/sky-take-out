@@ -29,4 +29,10 @@ public class ShoppingCartController {
     public Result<List<ShoppingCart>> list(){
         return Result.success(shoppingCartService.showShoppingCart());
     }
+
+    @DeleteMapping("/clean")
+    public Result<String> clean(){
+        shoppingCartService.cleanShoppingCart();
+        return Result.success();
+    }
 }
